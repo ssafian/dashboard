@@ -1,0 +1,79 @@
+// $primary: #276fc2;
+// $secondary: #e8d21d;
+// $border-radius: 1px;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css');
+
+.theme-switch {
+  .form-check {
+    &-input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    &-label {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  .form-check-input {
+    &:checked + .form-check-label {
+      color: #fff;
+    }
+
+    &:checked + .form-check-label::before {
+      transform: translateX(18px);
+      background-color: #000;
+    }
+  }
+
+  .form-check-label {
+    position: relative;
+    padding-left: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 24px;
+    font-size: 16px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 24px;
+      border-radius: 12px;
+      background-color: #ccc;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &.dark {
+    .form-check-input:checked + .form-check-label::before {
+      background-color: #fff;
+    }
+  }
+}
+
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+
+  &.dark {
+    .form-label {
+      color: #fff;
+    }
+
+    .form-control {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .btn-primary {
+      background-color: #333;
+      border-color: #333;
+    }
+  }
+}
